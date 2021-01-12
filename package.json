@@ -5,12 +5,19 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch assets/sass/main.scss:assets/css/main.css",
-    "build": "sass assets/sass/main.scss:assets/css/main.css --style=compressed"
+    "build": "sass assets/sass/main.scss:assets/css/main.css --style=compressed",
+    "dev": "nodemon index"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
   }
 }
