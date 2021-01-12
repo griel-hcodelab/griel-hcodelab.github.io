@@ -58,4 +58,8 @@ if (authPage) {
         btnSubmit.disabled = false;
     });
 
+    document.querySelector("#email-login").addEventListener("click",(e)=>{
+        location.hash = "#";
+    })
+
 }

@@ -1492,6 +1492,9 @@ header.page-title hr {
   width: 100%;
   max-width: unset;
 }
+#auth > section form #email-login {
+  cursor: pointer;
+}
 #auth > section form #new-password button {
   justify-content: end;
 }

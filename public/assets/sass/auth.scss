@@ -24,6 +24,9 @@
             margin-top: 170px;
             width: 100%;
             max-width: unset;
+            #email-login {
+                cursor: pointer;
+            }
             #new-password button {
                 justify-content: end;
             }

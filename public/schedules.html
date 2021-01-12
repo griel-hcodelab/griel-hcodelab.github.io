@@ -75,63 +75,97 @@
 		</div>
 		<hr class="italy" />
 	</header>
-	
-	<section class="page blue" id="schedules-time-options">
-		<header>
-			<h1>Escolha o Horário</h1>
-		</header>
-		<main>
-
-            <header class="page-title">
-                <h2>
-                    Horários do Dia
-                </h2>
-                <hr />
-            </header>
-
-            <form action="schedules-service.html" method="GET">
-                <h3>Quinta, 23 de julho de 2020</h3>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="option" value="9:00" />
-                        <span>9:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="10:00" />
-                        <span>10:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="11:00" />
-                        <span>11:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="12:00" checked />
-                        <span>12:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="13:00" />
-                        <span>13:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="14:00" />
-                        <span>14:00</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="option" value="15:00" />
-                        <span>15:00</span>
-                    </label>
-
-                    
-                </div>
-                <footer class="fixed">
-                    <a href="schedules-new.html">Voltar</a>
-                    <button type="submit">Continuar</button>
-                </footer>
-            </form>
+    <section id="schedules" class="page">
+        <header>
+            <h1>Agendamentos</h1>
+        </header>
+        <main>
+            <div>
+                <header class="page-title">
+                    <h2>Próximos</h2>
+                    <hr />
+                </header>
+                <ul>
+                    <li>
+                        <section>
+                            <div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 09:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Confirmado</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Revisão do veículo</span>
+                            </div>
+                        </section>
+                        <button type="button" class="cancel">Cancelar</button>
+                    </li>
+                    <li>
+                        <section>
+                            <div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 09:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Aguardando Pagamento</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Confirmado</span>
+                            </div>
+                        </section>
+                        <button type="button" class="cancel">Cancelar</button>
+                    </li>
+                </ul>
+			</div>
+			
+			<div>
+				<header class="page-title">
+					<h2>Histórico</h2>
+					<hr />
+				</header>
+				<ul>
+					<li>
+						<section>
+							<div>
+                                <label>Data</label>
+                                <span>02/07/2020 às 09:00</span>
+                            </div>
+                            <div>
+                                <label>Status</label>
+                                <span>Confirmado</span>
+                            </div>
+                            <div>
+                                <label>Valor</label>
+                                <span>R$20,00</span>
+                            </div>
+                            <div class="service">
+                                <label>Serviço</label>
+                                <span>Revisão do veículo</span>
+                            </div>
+						</section>
+						<button type="button" class="cancel">Cancelar</button>
+					</li>
+				</ul>
+            </div>
             
+            <footer class="fixed">
+                <a href="schedules-new.html" class="black">Novo Agendamento</a>
+            </footer>
         </main>
-	</section>
-	
-
+    </section>
+    <script src="bundle.js"></script>
 </body>
 </html>

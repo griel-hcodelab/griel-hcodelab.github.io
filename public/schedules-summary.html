@@ -76,27 +76,48 @@
 		<hr class="italy" />
     </header>
     
-    <section id="schedules-success" class="page green">
-		<header>
-			<h1>PAGAMENTO EFETUADO</h1>
+    <section id="schedules-summary" class="page blue">
+        
+        <header>
+            <div>
+                <h1>RESUMO DO PEDIDO<small>Confira os detalhes do pedido</small></h1>
+            </div>
+            
         </header>
         <main>
-            <header class="page-title">
-				<h2>Obrigado!</h2>
-				<hr />
-            </header>
-            <section>
-                <h3>10 de Julho de 2020</h3>
 
-                <div>
-                    <h3>Número do Pedido: 000123<small>Cartão de Crédito final 0604</small></h3>
+            <form action="schedules-success.html">
+                <div class="field">
+                    <input type="text" name="payment" id="payment" value="Cartão de crédito" readonly />
+                    <label for="payment">Forma de Pagamento</label>
                 </div>
-            </section>
-           
-            
-            <footer class="fixed">
-                <a href="schedules.html">Agendamentos</a>
-            </footer>
+                <div class="field">
+                    <input type="text" name="creditcard" id="creditcard" value="***0646" readonly />
+                    <label for="creditcard">Cartão Final</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="installments" id="installments" value="A vista" readonly />
+                    <label for="installments">Parcelas</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="services" id="services" value="1" readonly />
+                    <label for="services">Quantidades de Serviços</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="schedule_at" id="schedule_at" value="23 de julho de 2020 às 9:00" readonly />
+                    <label for="schedule_at">Data do Serviço</label>
+                </div>
+                <div class="field">
+                    <input type="text" name="total" id="total" value="R$ 400,00" readonly />
+                    <label for="total">Valor Total</label>
+                </div>
+                <footer class="fixed">
+                    <a href="schedules-time-options.html">Voltar</a>
+                    <button type="submit">Continuar</button>
+                </footer>
+            </form>
+
+
         </main>
 
         <aside>
@@ -163,8 +184,8 @@
                 </div>
             </footer>
         </aside>
-
+        
     </section>
-    
+    <script src="bundle.js"></script>
     </body>
 </html>
