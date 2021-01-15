@@ -1,5 +1,15 @@
+import firebase from './firebase-app';
+import { getFormValues, hideAlertError, showAlertError } from './utils';
+
 const authPage = document.querySelector("main#auth");
+
+
+
 if (authPage) {
+
+    const auth = firebase.auth();
+
+
     const hideAuthForms = ()=>{
         document.querySelectorAll("#auth form")
         .forEach(el => {
@@ -35,7 +45,8 @@ if (authPage) {
                 showAuthForm("reset");
             break
             default:
-                showAuthForm("auth-email");
+                //showAuthForm("auth-email");
+                showAuthForm("login");
             break;
         }
     }
@@ -61,5 +72,48 @@ if (authPage) {
     document.querySelector("#email-login").addEventListener("click",(e)=>{
         location.hash = "#";
     })
+
+    const formAuthRegister = document.querySelector("#register");
+
+    const alertDangerRegister = formAuthRegister.querySelector(".alert.danger");
+
+    formAuthRegister.addEventListener("submit", (e)=>{
+        e.preventDefault();
+
+        hideAlertError(formAuthRegister);
+
+        
+
+        const values = getFormValues(formAuthRegister);
+
+        auth.createUserWithEmailAndPassword(values.email, values.password)
+        .then((response) => {
+            //console.log("response", response);
+
+            const { user } = response;
+
+            user.updateProfile({
+                displayName: values.name
+            });
+
+            window.location.href = "/";
+        })
+        .catch(showAlertError(formAuthRegister));
+    });
+
+    const formAuthLogin = document.querySelector("#login");
+
+    formAuthLogin.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        hideAlertError(formAuthLogin);
+        const values = getFormValues(formAuthLogin);
+
+        auth.signInWithEmailAndPassword(values.email, values.password).
+        then((response)=>{
+            console.log(response);
+            window.location.href = "/";
+        }).
+        catch(showAlertError(formAuthLogin));
+    });
 
 }
