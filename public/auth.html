@@ -46,17 +46,19 @@
                 <h1>Fazer login</h1> 
                 <hr />
                 <div class="field">
-                    <input type="email" name="email" id="email-login" readonly value="roberto@griel.com.br"/>
+                    <input type="email" name="email" id="email-login" placeholder="seu@email.com"/>
                     <label for="email-login">E-mail</label>
                 </div>
                 <div class="field">
                     <input type="password" name="password" id="password"/>
                     <label for="password">Digite sua senha</label>
                 </div>
+                <div class="alert danger"></div>
                 <div class="actions">
                     <div>
                         <a href="auth.html#forget" class="link">Esqueceu sua senha?</a>
-                        <a href="auth.html" class="link">Este não é seu e-mail?</a>
+                        <a href="auth.html#register" class="link">Criar uma Conta</a>
+                        <!--<a href="auth.html" class="link">Este não é seu e-mail?</a>-->
                     </div>
                     <button type="submit">Login</button>
                 </div>
@@ -66,7 +68,7 @@
                 <h1>Criar conta</h1> 
                 <hr />
                 <div class="field">
-                    <input type="email" name="email" id="email-register" readonly value="roberto@griel.com.br"/>
+                    <input type="email" name="email" id="email-register" placeholder="seu@gmail.com"/>
                     <label for="email-login">E-mail</label>
                 </div>
                 <div class="field">
@@ -85,6 +87,9 @@
                     <input type="password" name="password-confirm" id="password-confirm"/>
                     <label for="password-confirm">Confirme a Senha</label>
                 </div>
+
+                <div class="alert danger"></div>
+
                 <div class="actions">
                     <a href="auth.html#login" class="link">Já tem uma conta?</a>
                     <button type="submit">Cadastrar</button>

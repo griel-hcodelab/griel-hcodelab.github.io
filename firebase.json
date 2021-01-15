@@ -6,5 +6,12 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  }
+  },
+    "apiKey": "AIzaSyBDZXT3j7mKooN3M2LTvIV1dSp4aR99PVQ",
+    "authDomain": "ferrari-hcodelab.firebaseapp.com",
+    "projectId": "ferrari-hcodelab",
+    "storageBucket": "ferrari-hcodelab.appspot.com",
+    "messagingSenderId": "989809518719",
+    "appId": "1:989809518719:web:a8fcbf08d7b74ffdcdf74a",
+    "measurementId": "G-5VM5LYNBND"
 }
