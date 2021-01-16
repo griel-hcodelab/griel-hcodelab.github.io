@@ -1,0 +1,27 @@
+23:17:47.411 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
+23:17:47.512 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+2021-01-15 23:17:47.599:INFO::main: Logging initialized @493ms to org.seleniumhq.jetty9.util.log.StdErrLog
+23:17:47.968 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+23:17:48.239 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+23:17:54.340 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "acceptSslCerts": true,
+  "browserName": "chrome",
+  "chromeOptions": {
+    "w3c": false,
+    "args": [
+      "disable-gpu"
+    ]
+  },
+  "javascriptEnabled": true,
+  "name": "Register"
+}
+23:17:54.342 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+Starting ChromeDriver 87.0.4280.20 (c99e81631faa0b2a448e658c0dbd8311fb04ddbd-refs/branch-heads/4280@{#355}) on port 45589
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+23:17:58.435 INFO [ProtocolHandshake.createSession] - Detected dialect: OSS
+23:17:58.758 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 280ed045abde306d60f35df0dcb48498 (org.openqa.selenium.chrome.ChromeDriverService)
+[1610763495.188][SEVERE]: Timed out receiving message from renderer: 10.000
+[1610763495.188][WARNING]: screenshot failed, retrying timeout: Timed out receiving message from renderer: 10.000
+23:18:27.561 INFO [ActiveSessions$1.onStop] - Removing session 280ed045abde306d60f35df0dcb48498 (org.openqa.selenium.chrome.ChromeDriverService)
