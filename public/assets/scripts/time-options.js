@@ -1,44 +1,16 @@
 import { format, parse } from "date-fns";
 import { appendTemplate, getFormValues, getQueryString, setFormValues } from "./utils";
+import firebase from './firebase-app';
 import { ptBR } from "date-fns/locale";
 
 
-const data = [{
-        id: 1,
-        value: '08:00'
-    }, {
-        id: 2,
-        value: '09:00'
-    },
-    {
-        id: 3,
-        value: '11:00'
-    },
-    {
-        id: 4,
-        value: '12:00'
-    },
-    {
-        id: 5,
-        value: '13:00'
-    },
-    {
-        id: 6,
-        value: '14:00'
-    },
-    {
-        id: 7,
-        value: '15:00'
-    }
-];
-
-const renderTimeOptions = (context) => {
+const renderTimeOptions = (context, timeOptions) => {
 
     const targetElement = context.querySelector(".options");
 
     targetElement.innerHTML = "";
 
-    data.forEach((item)=> {
+    timeOptions.forEach((item)=> {
         appendTemplate(
             targetElement, 
             "label", 
@@ -77,20 +49,35 @@ const validateSubmitForm = (context) => {
     })
 
     context.querySelector("form").addEventListener("submit", e => {
-        e.preventDefault()
-        console.log(getFormValues(e.target));
         if (!context.querySelector("[name=option]:checked")) {
             button.disabled = true
             e.preventDefault()
+        } else {
+            button.disabled = false
         }
-
     })
 };
 
 document.querySelectorAll("#schedules-time-options").forEach((page)=>{
-    renderTimeOptions(page)
 
-    validateSubmitForm(page);
+    const db = firebase.firestore();
+
+    db.collection('time-options').onSnapshot((snapshot)=>{
+        
+        const timeOptions = [];
+
+        snapshot.forEach((item)=>{
+
+           timeOptions.push(item.data());
+            
+
+        });
+
+        renderTimeOptions(page, timeOptions);
+        validateSubmitForm(page);
+    });
+
+    
 
     const params = getQueryString();
     const title = page.querySelector("h3");
