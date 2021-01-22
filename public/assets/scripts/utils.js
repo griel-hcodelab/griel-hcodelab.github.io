@@ -10,6 +10,10 @@ export function appendTemplate(element, tagName, html){
 
 };
 
+export function onSnapshotError(err) {
+    window.location.href = `/auth.html?url=${encodeURIComponent(window.location.pathname)}${encodeURIComponent(window.location.search)}`;
+}
+
 export function getQueryString() {
 
     const queryString = {};

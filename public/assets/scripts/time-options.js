@@ -1,5 +1,5 @@
 import { format, parse } from "date-fns";
-import { appendTemplate, getFormValues, getQueryString, setFormValues } from "./utils";
+import { appendTemplate, getFormValues, getQueryString, onSnapshotError, setFormValues } from "./utils";
 import firebase from './firebase-app';
 import { ptBR } from "date-fns/locale";
 
@@ -60,29 +60,45 @@ const validateSubmitForm = (context) => {
 
 document.querySelectorAll("#schedules-time-options").forEach((page)=>{
 
+    const auth = firebase.auth();
     const db = firebase.firestore();
 
-    db.collection('time-options').onSnapshot((snapshot)=>{
+    auth.onAuthStateChanged(user => {
+
+        console.log('user', user)
+
+        db.collection('time-options').onSnapshot((snapshot)=>{
         
-        const timeOptions = [];
+            const timeOptions = [];
+    
+            snapshot.forEach((item)=>{
+    
+               timeOptions.push(item.data());
+                
+    
+            });
+    
+            renderTimeOptions(page, timeOptions);
+            validateSubmitForm(page);
+        }, onSnapshotError);
 
-        snapshot.forEach((item)=>{
+    })
 
-           timeOptions.push(item.data());
-            
+    
 
-        });
-
-        renderTimeOptions(page, timeOptions);
-        validateSubmitForm(page);
-    });
+    
 
     
 
     const params = getQueryString();
     const title = page.querySelector("h3");
     const form = page.querySelector("form");
+    console.log(params.schedule_at);
     const scheduleAt = parse(params.schedule_at, "yyyy-MM-dd", new Date());
+    
+    if (scheduleAt.toString() === 'Invalid Date') {
+        window.history.back(-1)
+    }
 
     //page.querySelector("[name=schedule_at]").value = params.schedule_at;
 

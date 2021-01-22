@@ -1,5 +1,5 @@
 import firebase from './firebase-app';
-import { appendTemplate, formatCurrency, getQueryString, setFormValues } from './utils';
+import { appendTemplate, formatCurrency, getQueryString, onSnapshotError, setFormValues } from './utils';
 
 let serviceSumary = [];
 
@@ -117,7 +117,7 @@ document.querySelectorAll("#schedules-service").forEach((page)=>{
         });
 
         renderServiceOptions(page, services);
-    });
+    }, onSnapshotError);
 
     const params = getQueryString();
 
