@@ -10,7 +10,7 @@
     "dev": "webpack serve --watch --content-base public --hot",
     "test": "jest",
     "chrome": "nightwatch -e chrome",
-    "headless":"nightwatch -e headlessChrome"
+    "headless": "nightwatch -e headlessChrome"
   },
   "keywords": [],
   "author": "",
