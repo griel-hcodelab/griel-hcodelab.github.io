@@ -28,6 +28,17 @@ export function getQueryString() {
     return queryString;
 }
 
+export function getQueryStringFromJSON(json) {
+
+    const params = [];
+
+    Object.keys(json).forEach(key => {
+        params.push(`${key}=${json[key]}`)
+    });
+
+    return params.join("&");
+}
+
 export function setFormValues(form, values) {
 
     Object.keys(values).forEach(key => {

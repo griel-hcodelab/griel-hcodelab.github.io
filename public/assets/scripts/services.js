@@ -1,5 +1,5 @@
 import firebase from './firebase-app';
-import { appendTemplate, formatCurrency, getQueryString, onSnapshotError, setFormValues } from './utils';
+import { appendTemplate, formatCurrency, getFormValues, getQueryString, getQueryStringFromJSON, onSnapshotError, setFormValues } from './utils';
 
 let serviceSumary = [];
 
@@ -120,6 +120,7 @@ document.querySelectorAll("#schedules-service").forEach((page)=>{
     }, onSnapshotError);
 
     const params = getQueryString();
+    const form = page.querySelector("form");
 
     setFormValues(page.querySelector('form'), params);
 
@@ -127,6 +128,12 @@ document.querySelectorAll("#schedules-service").forEach((page)=>{
 
     $buttonSummary.addEventListener("click", (e)=>{
         page.querySelector("aside").classList.toggle('open')
+    })
+
+    form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        const values = getFormValues(form);
+        window.location.href = `/schedules-payment.html?${getQueryStringFromJSON(values)}`;
     })
 
 });
