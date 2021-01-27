@@ -4,3 +4,6 @@ import './calendar';
 import './time-options';
 import './services';
 import './credit-card';
+import './zipcode';
+import './change-photo';
+import './change-password';
